@@ -1,10 +1,104 @@
 {
-  "extends": ["../../.eslintrc.json"],
+  "extends": [
+    "../../.eslintrc.json",
+    "airbnb-base",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "ignorePatterns": ["!**/*"],
+  "env": {
+    "es6": true
+  },
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {}
+      "rules": {
+        "max-len": [
+          "error",
+          {
+            "code": 80
+          }
+        ],
+        "require-jsdoc": "off",
+        "import/no-cycle": "off",
+        "linebreak-style": 0,
+        "no-param-reassign": 0,
+        "no-shadow": "off",
+        "@typescript-eslint/no-var-requires": 0,
+        "import/extensions": 0,
+        "@typescript-eslint/ban-ts-ignore": "off",
+        "indent": "off",
+        "@typescript-eslint/indent": ["error", 2],
+        "func-names": ["error", "never"],
+        "arrow-parens": [2, "as-needed"],
+        "lines-between-class-members": [
+					"error",
+					"always" 
+			],
+			"key-spacing": [
+					"error",
+					{
+							"beforeColon": false,
+							"afterColon": true
+					}
+			],
+			"object-curly-spacing": [
+					"error",
+					"always"
+			],
+			"array-bracket-spacing": [
+					"error",
+					"always",
+					{
+							"singleValue": false
+					}
+			],
+			"array-bracket-newline":[
+					"error",
+					"consistent"
+			],
+			"space-before-blocks": [
+					"error",
+					{ 
+							"functions": "never",
+							"keywords": "always",
+							"classes": "always" 
+					}
+			],
+			"comma-spacing": [
+					"error",
+					{
+							"before": false,
+							"after": true
+					}
+			],
+			"keyword-spacing": [
+					"error",
+					{
+							"overrides": {
+									"try": {
+											"after": true
+									},
+									"catch": {
+											"after": false,
+											"before": true
+									}
+							}
+					}
+			],
+			"prefer-destructuring": [
+					"error",
+					{
+							"object": false, 
+							"array": false
+					}
+			],
+			"no-underscore-dangle": [
+					"error",
+					{
+							"allowAfterThis": true
+					}
+			]
+      }
     },
     {
       "files": ["*.ts", "*.tsx"],
